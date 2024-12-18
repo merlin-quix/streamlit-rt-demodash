@@ -12,6 +12,16 @@ api_url = "https://flaskwebgateway-c8b2898-demo-superlinkeddemo-main.demo.quix.i
 
 ## Function to get data from the API
 def get_data():
+    """
+    Fetches data from an API, prints a message indicating its progress, converts
+    the response to JSON format, constructs a Pandas DataFrame from the data, and
+    returns it.
+
+    Returns:
+        pdDataFrame: A pandas DataFrame object that represents the JSON data fetched
+        from the API.
+
+    """
     print(f"[{datetime.now()}] Fetching data from API...")
     response = requests.get(api_url)
     data = response.json()
@@ -21,6 +31,16 @@ def get_data():
 # Function to get data and cache it
 @st.cache_data
 def get_cached_data():
+    """
+    Retrieves cached data by calling the `get_data` function and returning its
+    result. If the data is not cached, it will be fetched from an unknown source
+    (not shown). The `@st.cache_data` decorator ensures that subsequent calls to
+    this function return the cached result instead of recalculating it.
+
+    Returns:
+        Any: A cached version of data obtained by calling the function `get_data`.
+
+    """
     return get_data()
 
 # Streamlit UI

@@ -1,0 +1,65 @@
+[
+  {
+    "name": "streamlit-dash.py",
+    "path": "streamlit-dash.py",
+    "content": {
+      "structured": {
+        "description": "A real-time dashboard using Streamlit and Quix. It fetches data from an API endpoint, caches it using `st.cache_data`, and then displays a dynamically updating Bokeh bar chart and table in Streamlit. The chart shows page counts for different page IDs and the table displays the underlying dataframe.",
+        "items": [
+          {
+            "id": "35e01325-a5af-4192-7e48-74b4c2db7246",
+            "ancestors": [],
+            "description": "Fetches data from an API, prints a message indicating its progress, converts the response to JSON format, constructs a Pandas DataFrame from the data, and returns it.",
+            "params": [],
+            "returns": {
+              "type_name": "pdDataFrame",
+              "description": "A pandas DataFrame object that represents the JSON data fetched from the API."
+            },
+            "usage": {
+              "language": "python",
+              "code": "df = get_data()\n",
+              "description": "\n\nThis line of code fetches data from API, parses JSON response into a DataFrame and assigns it to the variable df."
+            },
+            "name": "get_data",
+            "location": {
+              "start": 14,
+              "insert": 15,
+              "offset": " ",
+              "indent": 4,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 6,
+            "docLength": null
+          },
+          {
+            "id": "68979497-1843-119c-1149-8d270c607a50",
+            "ancestors": [],
+            "description": "Retrieves cached data by calling the `get_data` function and returning its result. If the data is not cached, it will be fetched from an unknown source (not shown). The `@st.cache_data` decorator ensures that subsequent calls to this function return the cached result instead of recalculating it.",
+            "params": [],
+            "returns": {
+              "type_name": "Any",
+              "description": "A cached version of data obtained by calling the function `get_data`."
+            },
+            "usage": {
+              "language": "python",
+              "code": "cached_result = get_cached_data()\n# Use cached_result as needed\n",
+              "description": ""
+            },
+            "name": "get_cached_data",
+            "location": {
+              "start": 22,
+              "insert": 24,
+              "offset": " ",
+              "indent": 4,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 3,
+            "docLength": null
+          }
+        ]
+      }
+    }
+  }
+]
